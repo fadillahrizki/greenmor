@@ -3,6 +3,30 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_control">Control</string>
+    <string name="title_control">Control Status</string>
     <string name="title_info">Info</string>
+
+    <string name="heroes_name">Nama Controller</string>
+    <string name="description">Deskripsi</string>
+
+    <string-array name="data_name">
+        <item>Fan</item>
+        <item>Lamp</item>
+        <item>Water Pump</item>
+        <item>Water Filter</item>
+    </string-array>
+
+    <string-array name="data_description">
+        <item>On</item>
+        <item>Off</item>
+        <item>On</item>
+        <item>Off</item>
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/fan</item>
+        <item>@drawable/lamp</item>
+        <item>@drawable/water_pump</item>
+        <item>@drawable/water_filter</item>
+    </integer-array>
 </resources>
