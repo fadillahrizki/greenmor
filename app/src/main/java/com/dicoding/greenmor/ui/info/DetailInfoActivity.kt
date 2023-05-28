@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.greenmor.R
-import com.dicoding.greenmor.ui.control.Hero
 
 class DetailInfoActivity : AppCompatActivity() {
 
