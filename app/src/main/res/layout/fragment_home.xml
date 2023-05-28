@@ -255,7 +255,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentEnd="true"
-                            app:cardBackgroundColor="#E91E63"
+                            app:cardBackgroundColor="@color/danger"
                             app:cardCornerRadius="50dp">
 
                             <TextView
@@ -457,7 +457,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentEnd="true"
-                            app:cardBackgroundColor="#FFC107"
+                            app:cardBackgroundColor="@color/warning"
                             app:cardCornerRadius="50dp">
 
                             <TextView
