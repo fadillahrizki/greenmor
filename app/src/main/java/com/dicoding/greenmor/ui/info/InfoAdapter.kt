@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.greenmor.R
-import java.util.*
 
 class InfoAdapter(private val listInfo: ArrayList<Info>, private val context: Context) : RecyclerView.Adapter<InfoAdapter.ListViewHolder>() {
 

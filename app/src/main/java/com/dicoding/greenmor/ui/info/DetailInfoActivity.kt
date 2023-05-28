@@ -2,15 +2,12 @@ package com.dicoding.greenmor.ui.info
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NavUtils
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.greenmor.MainActivity
 import com.dicoding.greenmor.R
-
 
 class DetailInfoActivity : AppCompatActivity() {
 

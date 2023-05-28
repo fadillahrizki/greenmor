@@ -4,16 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.greenmor.R
 import com.dicoding.greenmor.databinding.FragmentInfoBinding
-import com.dicoding.greenmor.ui.control.Hero
 import com.dicoding.greenmor.ui.control.InfoViewModel
-import com.dicoding.greenmor.ui.control.ListHeroAdapter
 
 class InfoFragment : Fragment() {
 
