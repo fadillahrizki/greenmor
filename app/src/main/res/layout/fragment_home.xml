@@ -1,191 +1,484 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingHorizontal="20dp"
     tools:context=".ui.home.HomeFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        app:cardCornerRadius="16dp">
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:layout_margin="20dp"
+            app:cardCornerRadius="16dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="12dp">
+                android:padding="12dp"
+                android:gravity="center">
 
-                <TextView
+                <ImageView
+                    android:id="@+id/img_cloud"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="Icon Cloud"
+                    android:src="@drawable/ic_cloud"
+                    android:layout_marginRight="10dp"
+                    app:tint="?attr/colorPrimary" />
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="GreenMor" />
+                    android:orientation="vertical"
+                    android:layout_toEndOf="@+id/img_cloud"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/weather_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cloudy"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="24°C"/>
+                </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Weather" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:columnCount="2"
-        android:rowCount="3"
-        android:useDefaultMargins="true">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:padding="12dp"
-            app:cardCornerRadius="12dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Temperature" />
-
-            </LinearLayout>
+            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+        <GridLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:padding="12dp"
-            app:cardCornerRadius="12dp">
+            android:layout_margin="12dp"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:useDefaultMargins="true">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:padding="12dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Humidity" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Icon Termometer"
+                        app:srcCompat="@drawable/ic_termo"
+                        app:tint="#999" />
 
-        </androidx.cardview.widget.CardView>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:padding="12dp"
-            app:cardCornerRadius="12dp">
+                        <TextView
+                            android:id="@+id/txt_temperature"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Temperature"
+                            android:layout_alignParentEnd="true"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="31°C"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/txt_temperature"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Moisture" />
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentEnd="true"
+                                app:cardBackgroundColor="?attr/colorPrimary"
+                                app:cardCornerRadius="50dp">
 
-            </LinearLayout>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Good"
+                                    android:textSize="12sp"
+                                    android:paddingHorizontal="12dp"
+                                    android:paddingVertical="2dp"/>
 
-        </androidx.cardview.widget.CardView>
+                            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:padding="12dp"
-            app:cardCornerRadius="12dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TDS" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:padding="12dp"
-            app:cardCornerRadius="12dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Water" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:padding="12dp"
-            app:cardCornerRadius="12dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="12dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PH" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-    </GridLayout>
+                    </RelativeLayout>
 
 
-</LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:padding="12dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Icon Termometer"
+                        app:srcCompat="@drawable/ic_humidity"
+                        app:tint="#999" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+
+                        <TextView
+                            android:id="@+id/txt_humidity"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Humidity"
+                            android:layout_alignParentEnd="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="54%"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/txt_humidity"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            app:cardBackgroundColor="?attr/colorPrimary"
+                            app:cardCornerRadius="50dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Good"
+                                android:textSize="12sp"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="2dp"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:padding="12dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Icon Termometer"
+                        app:srcCompat="@drawable/ic_moisture"
+                        app:tint="#999" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+
+                        <TextView
+                            android:id="@+id/txt_moisture"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Moisture"
+                            android:layout_alignParentEnd="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/txt_moisture"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            app:cardBackgroundColor="#E91E63"
+                            app:cardCornerRadius="50dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bad"
+                                android:textSize="12sp"
+                                android:textColor="@color/white"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="2dp"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:padding="12dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Icon Termometer"
+                        app:srcCompat="@drawable/ic_tds"
+                        app:tint="#999" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+
+                        <TextView
+                            android:id="@+id/txt_tds"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TDS"
+                            android:layout_alignParentEnd="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="700"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/txt_tds"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            app:cardBackgroundColor="?attr/colorPrimary"
+                            app:cardCornerRadius="50dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Good"
+                                android:textSize="12sp"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="2dp"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:padding="12dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Icon Water"
+                        app:srcCompat="@drawable/ic_water_drop"
+                        app:tint="#999" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+
+                        <TextView
+                            android:id="@+id/txt_water"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Water"
+                            android:layout_alignParentEnd="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/txt_water"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            app:cardBackgroundColor="?attr/colorPrimary"
+                            app:cardCornerRadius="50dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Good"
+                                android:textSize="12sp"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="2dp"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:padding="12dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="Icon PH"
+                        app:srcCompat="@drawable/ic_ph"
+                        app:tint="#999" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true">
+
+                        <TextView
+                            android:id="@+id/txt_ph"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PH"
+                            android:layout_alignParentEnd="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="14"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/txt_ph"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            app:cardBackgroundColor="#FFC107"
+                            app:cardCornerRadius="50dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Medium"
+                                android:textSize="12sp"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="2dp"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
