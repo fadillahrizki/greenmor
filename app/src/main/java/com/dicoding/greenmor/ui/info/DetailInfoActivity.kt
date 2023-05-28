@@ -1,11 +1,16 @@
 package com.dicoding.greenmor.ui.info
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NavUtils
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.greenmor.MainActivity
 import com.dicoding.greenmor.R
-import com.dicoding.greenmor.ui.control.Hero
+
 
 class DetailInfoActivity : AppCompatActivity() {
 
@@ -43,5 +48,15 @@ class DetailInfoActivity : AppCompatActivity() {
         rvPopular.layoutManager = LinearLayoutManager(applicationContext,
             LinearLayoutManager.HORIZONTAL, false)
         rvPopular.adapter = listInfoAdapter
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                startActivity(Intent(this, MainActivity::class.java))
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
