@@ -1,41 +1,47 @@
 package com.dicoding.greenmor.ui.control
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.dicoding.greenmor.databinding.FragmentControlBinding
-class ControlFragment : Fragment() {
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.greenmor.R
+import com.dicoding.greenmor.ui.control.ListHeroAdapter
+import com.dicoding.greenmor.ui.control.Hero
+class ControlFragment : AppCompatActivity() {
+    private lateinit var rvHeroes: RecyclerView
+    private val list = ArrayList<Hero>()
 
-    private var _binding: FragmentControlBinding? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.fragment_control)
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+        rvHeroes = findViewById(R.id.rv_heroes)
+        rvHeroes.setHasFixedSize(true)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(InfoViewModel::class.java)
+        list.addAll(getListHeroes())
+        showRecyclerList()
+    }
 
-        _binding = FragmentControlBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    private fun getListHeroes(): ArrayList<Hero> {
+        val dataName = resources.getStringArray(R.array.data_name)
+        val dataDescription = resources.getStringArray(R.array.data_description)
+        val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+        val listHero = ArrayList<Hero>()
+        for (i in dataName.indices) {
+            val hero = Hero(dataName[i], dataDescription[i], dataPhoto.getResourceId(i, -1))
+            listHero.add(hero)
         }
-        return root
+        return listHero
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun showRecyclerList() {
+        rvHeroes.layoutManager = LinearLayoutManager(this)
+        val listHeroAdapter = ListHeroAdapter(list)
+        rvHeroes.adapter = listHeroAdapter
     }
+
 }
