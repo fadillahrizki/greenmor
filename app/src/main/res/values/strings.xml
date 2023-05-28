@@ -29,4 +29,16 @@
         <item>@drawable/water_pump</item>
         <item>@drawable/water_filter</item>
     </integer-array>
+
+    <string-array name="data_info_name">
+        <item>Lettuce</item>
+        <item>Lettuce</item>
+        <item>Lettuce</item>
+    </string-array>
+
+    <integer-array name="data_info_photo">
+        <item>@drawable/lettuce</item>
+        <item>@drawable/lettuce</item>
+        <item>@drawable/lettuce</item>
+    </integer-array>
 </resources>
